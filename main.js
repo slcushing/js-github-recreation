@@ -5,6 +5,16 @@
 
 
 
+    const generateHTML = (data) => {
+        const source = document.querySelector('#github-photo').innerHTML;
+        const template = Handlebars.compile(source);
+        const html = template(data);
+        document.querySelector('.container').innerHTML = html;
+    }
+        
+
+
+
 
 
 

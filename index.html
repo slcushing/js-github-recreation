@@ -7,7 +7,42 @@
     <title>GitHub Recreation</title>
 </head>
 <body>
+    <div class="container"></div>
+
+    <div class="bio">
+        <script id="bio-template" type="text/x-handlebars-template">
+            <div><img src="{{this.avatar_url}}" alt=""></div>
+            <div><h2>{{this.name}}</h2></div>
+            <div><p>{{this.login}}</p></div>
+            <div><p>{{this.followers}}</p></div>
+            <div><p>{{this.following}}</p></div>
+            <div><h3>{{this.organizations}}</h3></div>
+            <div><img/>PYTHON SYMBOL HERE</div>
+        </script>
+     </div>   
+
+     <div class="nav-bar">
+        <script id="nav-bar-template" type="text/x-handlebars-template">
+            <div>overview</div>
+            <div>repositories</div>
+            <div>projects</div>
+            <div>packages</div>
+        </script>
+    </div>
     
+    <div class="repositories">
+        <script id="repos-template" type="text/x-handlebars-template">
+            {{#each gitData}}
+            <p>{{this.name}}</p>
+            {{/each}}
+        </script>
+
+    </div>
+
+
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./main.js"></script>
