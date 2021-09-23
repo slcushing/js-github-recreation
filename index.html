@@ -29,11 +29,13 @@
             <div>packages</div>
         </script>
     </div>
-    
+
     <div class="repositories">
         <script id="repos-template" type="text/x-handlebars-template">
-            {{#each gitData}}
+            {{#each data}}
             <p>{{this.name}}</p>
+            <p>{{this.language}}</p>
+            <p>{{this.updated_at}}</p>
             {{/each}}
         </script>
 
