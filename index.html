@@ -21,21 +21,31 @@
         </script>
      </div>   
 
-     <div class="nav-bar">
-        <script id="nav-bar-template" type="text/x-handlebars-template">
-            <div>overview</div>
-            <div>repositories</div>
-            <div>projects</div>
-            <div>packages</div>
-        </script>
-    </div>
+     <nav class="nav-bar">
+        <ul>   
+            <li>overview</li>
+            <li>repositories</li>
+            <li>projects</li>
+            <li>packages</li>
+        </ul>    
+     </nav>
 
     <div class="repositories">
         <script id="repos-template" type="text/x-handlebars-template">
             {{#each data}}
-            <p>{{this.name}}</p>
-            <p>{{this.language}}</p>
-            <p>{{this.updated_at}}</p>
+             <div class="row1">
+                <p>{{this.name}}</p>
+                {{#if this.private}}
+                 <p>Private</p>
+                {{/if}}
+                {{#unless this.private}}
+                 <p>Public</p>
+                {{/unless}} 
+             </div>
+             <div class="row2">
+                <p>{{this.language}}</p>
+                <p>{{this.updated_at}}</p>
+             </div> 
             {{/each}}
         </script>
 

@@ -3,8 +3,6 @@
 
     const base_url = 'https://api.github.com/users/slcushing';
 
-
-
     const generateHTML = (data) => {
         const source = document.querySelector('#bio-template').innerHTML;
         const template = Handlebars.compile(source);
@@ -26,23 +24,11 @@ Promise.all([
         .then(response => response.json())
         .then(data => generateHTML(data)),
         
-
     fetch(`${base_url}/repos`)
         .then(response => response.json())
-        .then(data => generateRepos(data)),
+        .then(data => generateRepos(data))
 
 ]);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
